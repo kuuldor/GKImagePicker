@@ -38,7 +38,11 @@
 
 
 - (void)_actionCancel{
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([self.delegate respondsToSelector:@selector(imageCropControllerDidCancel:)]) {
+        [self.delegate performSelector:@selector(imageCropControllerDidCancel:) withObject:self];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 

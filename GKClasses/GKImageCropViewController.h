@@ -25,4 +25,7 @@
 @protocol GKImageCropControllerDelegate <NSObject>
 @required
 - (void)imageCropController:(GKImageCropViewController *)imageCropController didFinishWithCroppedImage:(UIImage *)croppedImage;
+
+@optional
+- (void)imageCropControllerDidCancel:(GKImageCropViewController *)imageCropController;
 @end
