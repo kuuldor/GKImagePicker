@@ -54,9 +54,8 @@
                                                                                           target:self 
                                                                                           action:@selector(_actionCancel)];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"GKIuse", @"")
-                                                                              style:UIBarButtonItemStyleBordered 
-                                                                             target:self 
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                                                                             target:self
                                                                              action:@selector(_actionUse)];
 }
 
@@ -78,7 +77,7 @@
         [[self.cancelButton titleLabel] setFont:[UIFont boldSystemFontOfSize:16]];
         [[self.cancelButton titleLabel] setShadowOffset:CGSizeMake(0, -1)];
         [self.cancelButton setFrame:CGRectMake(0, 0, 58, 30)];
-        [self.cancelButton setTitle:NSLocalizedString(@"GKIcancel",@"") forState:UIControlStateNormal];
+        [self.cancelButton setTitle:NSLocalizedString(@"取消",@"") forState:UIControlStateNormal];
         [self.cancelButton setTitleShadowColor:[UIColor colorWithRed:0.118 green:0.247 blue:0.455 alpha:1] forState:UIControlStateNormal];
         [self.cancelButton  addTarget:self action:@selector(_actionCancel) forControlEvents:UIControlEventTouchUpInside];
     } else {
@@ -90,7 +89,7 @@
         [[self.cancelButton titleLabel] setFont:[UIFont boldSystemFontOfSize:11]];
         [[self.cancelButton titleLabel] setShadowOffset:CGSizeMake(0, 1)];
         [self.cancelButton setFrame:CGRectMake(0, 0, 50, 30)];
-        [self.cancelButton setTitle:NSLocalizedString(@"GKIcancel",@"") forState:UIControlStateNormal];
+        [self.cancelButton setTitle:NSLocalizedString(@"取消",@"") forState:UIControlStateNormal];
         [self.cancelButton setTitleColor:[UIColor colorWithRed:0.173 green:0.176 blue:0.176 alpha:1] forState:UIControlStateNormal];
         [self.cancelButton setTitleShadowColor:[UIColor colorWithRed:0.827 green:0.831 blue:0.839 alpha:1] forState:UIControlStateNormal];
         [self.cancelButton  addTarget:self action:@selector(_actionCancel) forControlEvents:UIControlEventTouchUpInside];
@@ -105,7 +104,7 @@
         [[self.useButton titleLabel] setFont:[UIFont boldSystemFontOfSize:16]];
         [[self.useButton titleLabel] setShadowOffset:CGSizeMake(0, -1)];
         [self.useButton setFrame:CGRectMake(0, 0, 58, 30)];
-        [self.useButton setTitle:NSLocalizedString(@"GKIuse",@"") forState:UIControlStateNormal];
+        [self.useButton setTitle:NSLocalizedString(@"采用",@"") forState:UIControlStateNormal];
         [self.useButton setTitleShadowColor:[UIColor colorWithRed:0.118 green:0.247 blue:0.455 alpha:1] forState:UIControlStateNormal];
         [self.useButton  addTarget:self action:@selector(_actionUse) forControlEvents:UIControlEventTouchUpInside];
     } else {
@@ -117,7 +116,7 @@
         [[self.useButton titleLabel] setFont:[UIFont boldSystemFontOfSize:11]];
         [[self.useButton titleLabel] setShadowOffset:CGSizeMake(0, -1)];
         [self.useButton setFrame:CGRectMake(0, 0, 50, 30)];
-        [self.useButton setTitle:NSLocalizedString(@"GKIuse",@"") forState:UIControlStateNormal];
+        [self.useButton setTitle:NSLocalizedString(@"采用",@"") forState:UIControlStateNormal];
         [self.useButton setTitleShadowColor:[UIColor colorWithRed:0.118 green:0.247 blue:0.455 alpha:1] forState:UIControlStateNormal];
         [self.useButton  addTarget:self action:@selector(_actionUse) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -224,7 +223,7 @@
     [super viewWillLayoutSubviews];
     
     self.imageCropView.frame = self.view.bounds;
-    self.toolbar.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - 54, 320, 54);
+    self.toolbar.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - 54, self.view.bounds.size.width, 54);
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
