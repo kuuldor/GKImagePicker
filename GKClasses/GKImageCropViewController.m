@@ -205,8 +205,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = NSLocalizedString(@"GKIchoosePhoto", @"");
-
     [self _setupNavigationBar];
     [self _setupCropView];
     [self _setupToolbar];
